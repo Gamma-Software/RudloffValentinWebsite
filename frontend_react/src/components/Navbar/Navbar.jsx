@@ -1,12 +1,12 @@
-import React, {useState} from 'react'
-import { HiMenuAlt4, HiX } from 'react-icons/hi'
-import motion from 'framer-motion'
+import React, { useState } from 'react';
+import { HiMenuAlt4, HiX } from 'react-icons/hi';
+import { motion, AnimatePresence } from 'framer-motion';
 
-import './Navbar.scss'
-import images from '../../constants/images'
+import { images } from '../../constants';
+import './Navbar.scss';
 
 const Navbar = () => {
-  const [toogle, setToogle] = React.useState(false)
+  const [toogle, setToogle] = useState(false)
   return (
     <nav className='app__navbar'>
       <div className='app_navbar-logo'>
@@ -18,16 +18,32 @@ const Navbar = () => {
           <div/>
           <a href={`#${item}`}>{item}</a>
         </li>
-      ))}    
+      ))}
       </ul>
-      <div className='app__navbar-icon'>
+      <div className='app__navbar-menu'>
         <HiMenuAlt4 onClick={() => setToogle(true)}/>
-        {toogle && (
-          <motion.div
-            className='app__navbar-icon-menu'
-            whileInView={{x: }}
-          >  </motion.div>
-        )}
+        <AnimatePresence>
+          {toogle && (
+            <motion.div
+              key='menu'
+              initial={{ x: '100%'}}
+              animate={{ x: '0%'}}
+              exit={{ x: '100%'}}
+              transition={{duration: 0.3, ease: 'easeOut'}}
+            >
+              <ul>
+                <HiX onClick={() => setToogle(false)} />
+                {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
+                  <li key={item}>
+                    <a href={`#${item}`} onClick={() => setToogle(false)}>
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   )
