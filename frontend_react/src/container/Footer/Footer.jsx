@@ -4,7 +4,7 @@ import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { client } from '../../client';
 import './Footer.scss';
-import { FaOldRepublic } from 'react-icons/fa';
+import { FaPaperPlane } from 'react-icons/fa';
 
 const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -83,7 +83,8 @@ const Footer = () => {
               onChange={handleChangeInput}
             />
           </div>
-          <button type="button" style={loading ? {backgroundColor: '#313BAC'} : {}} className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
+          <button type="button" style={loading ? {backgroundColor: '#313BAC'} : {}} className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'} <FaPaperPlane/></button>
+          
         </div>
       ) : (
         <div>
