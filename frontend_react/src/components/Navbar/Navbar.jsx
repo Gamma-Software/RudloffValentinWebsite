@@ -9,7 +9,8 @@ const Navbar = () => {
   const [toogle, setToogle] = useState(false)
   return (
     <nav className='app__navbar'>
-      <div className='app_navbar-logo'>
+      <div className='app__navbar-logo'>
+        <img src={images.logo} alt='logo' />
         <h1>Valentin <span>RUDLOFF</span></h1>
       </div>
       <ul className='app__navbar-links'>
