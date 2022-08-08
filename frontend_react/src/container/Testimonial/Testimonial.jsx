@@ -34,7 +34,8 @@ const Testimonial = () => {
               <p className="p-text">{testimonials[currentIndex].feedback}</p>
               <div>
                 <h4 className="bold-text">{testimonials[currentIndex].name}</h4>
-                <h5 className="p-text">{testimonials[currentIndex].company}</h5>
+                <h5 className="p-text">{testimonials[currentIndex].company}, {testimonials[currentIndex].position}</h5>
+                <h5 className="p-text">{testimonials[currentIndex].relative}</h5>
               </div>
             </div>
           </div>
@@ -50,8 +51,8 @@ const Testimonial = () => {
           </div>
         </>
       )}
-      <div className="app__testimonial-brands app__flex">
       <h2 className="head-text">Brands</h2>
+      <div className="app__testimonial-brands app__flex">
         {brands.map((brand) => (
           <motion.div
             whileInView={{ opacity: [0, 1] }}
