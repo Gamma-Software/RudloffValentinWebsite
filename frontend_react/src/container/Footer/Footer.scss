@@ -85,7 +85,9 @@
         padding: 1rem 2rem;
         border-radius: 10px;
         border: none;
-        background-color: var(--primary-color);
+        background-color: green;
+        color: white;
+        cursor: pointer;
     }
 
     @media screen and (max-width: 768px) {

@@ -4,11 +4,15 @@ import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { client } from '../../client';
 import './Footer.scss';
+import { FaOldRepublic } from 'react-icons/fa';
 
 const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [nameError, setNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [messageError, setMessageError] = useState(false);
 
   const { username, email, message } = formData;
 
@@ -19,6 +23,14 @@ const Footer = () => {
 
   const handleSubmit = () => {
     setLoading(true);
+
+    setEmailError(!email);
+    setNameError(!username);
+    setMessageError(!message);
+    if (!email || !username || !message) {
+      setLoading(false);
+      return;
+    }
 
     const contact = {
       _type: 'contact',
@@ -48,25 +60,30 @@ const Footer = () => {
           <img src={images.mobile} alt="phone" />
           <a href="tel:+33 06 25 16 37 22" className="p-text">+33 06 25 16 37 22</a>
         </div>
+        <div className="app__footer-card ">
+          <img src={images.linkedin} alt="linkedin" />
+          <a href="https://www.linkedin.com/in/rudloffvalentin/?locale=en_US" className="p-text">Valentin's LinkedIn</a>
+        </div>
       </div>
       {!isFormSubmitted ? (
         <div className="app__footer-form app__flex">
           <div className="app__flex">
-            <input className="p-text" type="text" placeholder="Your Name" name="username" value={username} onChange={handleChangeInput} />
+            <input className="p-text" style={nameError ? {backgroundColor: '#ff000057'} : {}} type="text" placeholder="Your Name" name="username" value={username} onChange={handleChangeInput} />
           </div>
           <div className="app__flex">
-            <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
+            <input className="p-text" style={emailError ? {backgroundColor: '#ff000057'} : {}} type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
           </div>
           <div>
             <textarea
               className="p-text"
+              style={messageError ? {backgroundColor: '#ff000057'} : {}}
               placeholder="Your Message"
               value={message}
               name="message"
               onChange={handleChangeInput}
             />
           </div>
-          <button type="button" className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
+          <button type="button" style={loading ? {backgroundColor: '#313BAC'} : {}} className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
         </div>
       ) : (
         <div>
