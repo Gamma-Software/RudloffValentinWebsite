@@ -64,6 +64,10 @@ const Footer = () => {
           <img src={images.linkedin} alt="linkedin" />
           <a href="https://www.linkedin.com/in/rudloffvalentin/?locale=en_US" className="p-text">Valentin's LinkedIn</a>
         </div>
+        <div className="app__footer-card ">
+          <img src={images.github} alt="github" />
+          <a href="https://github.com/Gamma-Software" className="p-text">Valentin's Github</a>
+        </div>
       </div>
       {!isFormSubmitted ? (
         <div className="app__footer-form app__flex">
