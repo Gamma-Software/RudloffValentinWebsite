@@ -25,24 +25,34 @@ const Navbar = () => {
         <HiMenuAlt4 onClick={() => setToogle(true)}/>
         <AnimatePresence>
           {toogle && (
-            <motion.div
-              key='menu'
-              initial={{ x: '100%'}}
-              animate={{ x: '0%'}}
-              exit={{ x: '100%'}}
-              transition={{duration: 0.3, ease: 'easeOut'}}
-            >
-              <ul>
-                <HiX onClick={() => setToogle(false)} />
-                {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
-                  <li key={item}>
-                    <a href={`#${item}`} onClick={() => setToogle(false)}>
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+            <div>
+              <motion.div 
+                className='menu-back'
+                initial={{ opacity: '0'}}
+                animate={{ opacity: '1'}}
+                exit={{ opacity: '0'}}
+                style={toogle ? {} : {display: 'none'}}
+                onClick={() => setToogle(false)}/>
+              <motion.div
+                className='list-item'
+                key='menu'
+                initial={{ x: '100%'}}
+                animate={{ x: '0%'}}
+                exit={{ x: '100%'}}
+                transition={{duration: 0.3, ease: 'easeOut'}}
+              >
+                <ul>
+                  <HiX onClick={() => setToogle(false)} />
+                  {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
+                    <li key={item}>
+                      <a href={`#${item}`} onClick={() => setToogle(false)}>
+                        {item}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
           )}
         </AnimatePresence>
       </div>
