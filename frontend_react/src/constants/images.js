@@ -6,6 +6,7 @@ import css from '../assets/css.png';
 import figma from '../assets/figma.png';
 import flutter from '../assets/flutter.png';
 import git from '../assets/git.png';
+import gitlab from '../assets/gitlab-ci.png';
 import graphql from '../assets/graphql.png';
 import html from '../assets/html.png';
 import javascript from '../assets/javascript.png';
@@ -45,6 +46,7 @@ export default {
   figma,
   flutter,
   git,
+  gitlab,
   graphql,
   html,
   javascript,
