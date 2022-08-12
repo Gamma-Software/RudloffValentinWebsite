@@ -22,7 +22,7 @@ const About = () => {
       My different <span>area </span><br></br>of <span>expertise</span>
     </h2>
     <div className='app__profiles'>
-      {abouts.map((about, index) => (
+      {abouts.sort((a, b) => a.order < b.order ? 1 : -1).map((about, index) => (
         <motion.div
           whileInView={{opacity: 1}}
           whileHover={{scale: 1.1}}

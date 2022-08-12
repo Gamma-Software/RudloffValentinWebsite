@@ -7,8 +7,8 @@
 .app__profiles {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    align-items: flex-end;
+    flex-wrap: wrap-reverse;
     margin-top: 2rem;
 }
 
