@@ -92,6 +92,10 @@
     @media screen and (max-width: 900px) {
       margin-top: 2rem;
     }
+  
+    @media screen and (min-width: 900px) {
+      height: 65vh;
+    }
   }
   
   .app__skills-exp-item {
