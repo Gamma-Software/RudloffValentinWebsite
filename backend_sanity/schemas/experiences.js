@@ -21,12 +21,20 @@ export default{
         {
             name:'from',
             title:'From',
-            type:'date'
+            type:'date',
+            options: {
+                dateFormat: 'YYYY/MM',
+                calendarTodayLabel: 'Today'
+            }
         },
         {
             name:'to',
             title:'To',
-            type:'date'
+            type:'date',
+            options: {
+                dateFormat: 'YYYY/MM',
+                calendarTodayLabel: 'Today'
+            }
         }
     ]
 }
