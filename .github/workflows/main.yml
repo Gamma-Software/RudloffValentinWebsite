@@ -8,6 +8,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Create env file
+        run: |
+          echo REACT_APP_SANITY_PROJECT_ID=${{ secrets.REACT_APP_SANITY_PROJECT_ID }} > .env
+          echo REACT_APP_SANITY_TOKEN=${{ secrets.REACT_APP_SANITY_TOKEN }} >> .env
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
