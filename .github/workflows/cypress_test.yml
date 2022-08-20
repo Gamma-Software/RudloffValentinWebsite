@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Go to frontend folder
         run: |
-          cd frontend_react
+          cd frontend_react && ls -la
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
