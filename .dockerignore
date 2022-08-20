@@ -1,0 +1,8 @@
+node_modules
+build
+.dockerignore
+Dockerfile
+Dockerfile.prod
+
+# Cypress results
+frontend_react/cypress/videos
