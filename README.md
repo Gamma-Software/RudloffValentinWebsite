@@ -16,7 +16,7 @@ docker run \
     -v /app/node_modules \
     -p 3001:3000 \
     -e CHOKIDAR_USEPOLLING=true \
-    sample:dev
+    npm-react-app:dev
 ```
 ### Prod environment
 Start building the PROD environnement with the command 
@@ -25,5 +25,5 @@ docker build -f Dockerfile.prod -t npm-react-app:prod .
 ```
 Then run it with the command from the root of the project
 ``` bash
-docker run -it --rm -p 1337:80 sample:prod
+docker run -it --rm -p 1337:80 npm-react-app:prod
 ```
