@@ -53,7 +53,7 @@ const Footer = () => {
 
       <div className="app__footer-cards">
         <div className="app__footer-card ">
-          <img src={images.email} alt="email" />
+          <img src={images.email} alt="email"/>
           <a href="mailto:valentin.rudloff.perso@gmail.com" className="p-text">valentin.rudloff.perso@gmail.com</a>
         </div>
         <div className="app__footer-card">
@@ -87,7 +87,7 @@ const Footer = () => {
               onChange={handleChangeInput}
             />
           </div>
-          <button type="button" style={loading ? {backgroundColor: '#313BAC'} : {}} className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'} <FaPaperPlane/></button>
+          <button type="button" style={loading ? {backgroundColor: '#313BAC'} : {}} className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'} <FaPaperPlane inverse/></button>
           
         </div>
       ) : (
