@@ -1,6 +1,9 @@
 # RudloffWebsite
 My personnal website
 
+
+## CI
+[![frontend_react](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/a7a7k1/main&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/a7a7k1/runs)
 ## Dockerize
 ### Dev environment
 Start building the DEV environnement with the command 
