@@ -102,10 +102,15 @@
         border-radius: 50%;
         background: var(--white-color);
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        
-        img {
-            width: 60%;
-            height: 60%;
+        cursor: pointer;
+
+        a {
+            display: flex;
+            justify-content: center;
+            img {
+                width: 60%;
+                height: 60%;
+            }
         }
     }
     div:nth-child(1) {

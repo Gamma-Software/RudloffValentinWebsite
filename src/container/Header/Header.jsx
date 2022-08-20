@@ -59,7 +59,9 @@ const Header = () => {
         className='app__header-circles'>
           {[images.gitlab, images.cpp, images.python].map((circle, index) => (
             <div className='circle-cmp app__flex' key={`cicle-${index}`}>
-              <img src={circle} alt='circle'></img>
+              <a href={`#skills`}>
+                <img src={circle} alt='circle'/>
+              </a>
             </div>
             ))}
       </motion.div>
