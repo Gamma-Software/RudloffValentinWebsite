@@ -1,0 +1,34 @@
+name: Docker Build And Deploy
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Retrieve Latest Tag
+      run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
+    - name: Version
+      run: echo ${{ env.RELEASE_VERSION }}
+    
+    - name: Build Docker image
+      run: |
+        docker build . --tag valentinrudloff/portfolio-website:${{ env.RELEASE_VERSION }} --build-arg SANITY_PROJECT_ID=${REACT_APP_SANITY_PROJECT_ID} --build-arg SANITY_TOKEN=${REACT_APP_SANITY_TOKEN}
+    - name: Docker Login
+      env :
+        USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: |
+        docker login -u $USERNAME -p $PASSWORD
+    - name: Docker Push Version
+      run: |
+        docker push valentinrudloff/portfolio-website:${{ env.RELEASE_VERSION }}
+    - name: Docker Push Latest
+      run: |
+        docker push valentinrudloff/portfolio-website:latest
