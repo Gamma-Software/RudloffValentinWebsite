@@ -9,7 +9,7 @@ ENV NODE_ENV production
 # Add a work directory
 WORKDIR /app
 COPY . .
-RUN touch .env && REACT_APP_SANITY_PROJECT_ID=${SANITY_PROJECT_ID} >> .env && REACT_APP_SANITY_TOKEN=${SANITY_TOKEN} >> .env
+RUN echo REACT_APP_SANITY_PROJECT_ID=${SANITY_PROJECT_ID} > .env && echo REACT_APP_SANITY_TOKEN=${SANITY_TOKEN} >> .env
 RUN npm install
 RUN npm run build
 
