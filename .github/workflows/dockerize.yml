@@ -19,8 +19,10 @@ jobs:
     
     - name: Build Docker image
       run: |
-        docker build . --tag valentinrudloff/portfolio-website:${{ env.RELEASE_VERSION }} --build-arg SANITY_PROJECT_ID=${{secrets.REACT_APP_SANITY_PROJECT_ID}} --build-arg SANITY_TOKEN=${{secrets.REACT_APP_SANITY_TOKEN}}
-        docker build . --tag valentinrudloff/portfolio-website:latest --build-arg SANITY_PROJECT_ID=${{secrets.REACT_APP_SANITY_PROJECT_ID}} --build-arg SANITY_TOKEN=${{secrets.REACT_APP_SANITY_TOKEN}}
+        echo REACT_APP_SANITY_PROJECT_ID=${{secrets.REACT_APP_SANITY_PROJECT_ID}} > .env
+        echo REACT_APP_SANITY_TOKEN=${{secrets.REACT_APP_SANITY_TOKEN}} >> .env
+        docker build . --tag valentinrudloff/portfolio-website:${{ env.RELEASE_VERSION }}
+        docker build . --tag valentinrudloff/portfolio-website:latest
     - name: Docker Login
       env :
         USERNAME: ${{ secrets.DOCKER_USERNAME }}
