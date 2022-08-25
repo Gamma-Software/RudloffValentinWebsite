@@ -25,6 +25,11 @@ export default {
         type: 'string',
       },
       {
+        name: 'company',
+        title: 'Company',
+        type: 'string',
+      },
+      {
         name: 'imgUrl',
         title: 'ImageUrl',
         type: 'image',
