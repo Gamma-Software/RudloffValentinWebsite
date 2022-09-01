@@ -44,16 +44,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
     .app__work-item {
         width: 270px;
         flex-direction: column;
+        justify-content: flex-start;
 
         margin: 2rem;
         padding: 1rem;
         border-radius: 0.5rem;
-        background-color: #fff;
-        color: #000;
+        background-color: white;
+        color: black;
     }
 }
 
@@ -67,6 +67,7 @@
         height: 100%;
         border-radius: 0.5rem;
         object-fit: cover;
+        background-color: rgba(0, 0, 0, 0.064);
     }
     @media screen and (min-width: 2000px) {
         height: 350px;

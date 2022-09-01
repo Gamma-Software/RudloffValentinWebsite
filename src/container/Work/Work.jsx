@@ -89,6 +89,7 @@ const Work = () => {
                 className='app__work-content app__flex'
               >
                 <h4 className='bold-text'>{work.title}</h4>
+                <h5 className='italic-text'>{work.company}</h5>
                 <p className='p-text' style={{marginTop: 10}}>{work.description}</p>
                 <div className='app__work-tag app_flex'>
                   <p className='p-text'>{work.tags[0]}</p>
@@ -104,5 +105,5 @@ const Work = () => {
 export default AppWrap(
   MotionWrap(Work, 'app__works'),
   'work',
-  'app__whitebg',
+  'app__primarybg',
 );
